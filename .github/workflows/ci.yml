@@ -6,7 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Run Django unit tests
+    - name: Install dependencies
       run: |
         pip install --user django
+    - name: Run Django unit tests
+      run: |
+        cd testprojectairline/airline
         python3 manage.py test
