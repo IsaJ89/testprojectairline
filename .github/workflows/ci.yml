@@ -1,14 +1,28 @@
 name: Testing
-on: push
+
+on:
+  push:
 
 jobs:
   test_project:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
+
+    - name: List root directory
+      run: ls -la
+
+    - name: List testprojectairline directory
+      run: ls -la testprojectairline
+
+    - name: List airline directory
+      run: ls -la testprojectairline/airline
+
     - name: Install dependencies
       run: |
         pip install --user django
+
     - name: Run Django unit tests
       run: |
         cd testprojectairline/airline
