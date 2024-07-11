@@ -1,3 +1,4 @@
+# .yml file path should be gitrepo/.github/workflows/filename.yml
 name: Testing
 on: push
 
@@ -7,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Django unit tests
-        run: |  
+        run: |  # airline is the directory that contains the manage.py file
           cd airline  
           pip3 install --user django
           python3 manage.py test
