@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - working-directory: ./airline
     - name: Run Django unit tests
+    - working-directory: ./airline
       run: |
         pip3 install --user django
         python3 manage.py test
